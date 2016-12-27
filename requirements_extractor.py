@@ -49,3 +49,6 @@ if __name__ == "__main__":
         for requirement in requirements:
             writer.writerow(requirement)
 
+    with open('proposal_shell.txt', 'w+') as proposal:
+        for req in requirements:
+            proposal.write("<req id={0}>{1}\n\nbullets...\n\n</req>\n\n".format(req['uid'], req['specification']))
