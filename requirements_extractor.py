@@ -16,7 +16,7 @@ class RequirementsExtractor:
         Returns:
             list: list of tuples of (id, requirement)
         """
-        pattern = "<\s*req id=(?P<uid>(?P<section>[\d\.]+)\.r\d+)\s*>(?P<specification>[^<]*)<\/\s*req\s*>"
+        pattern = "<\s*req id=(?P<uid>(?P<section>\d(\.\w)*)\.r\d+)\s*>(?P<specification>[^<]+)<\/\s*req\s*>"
         requirements = []
 
         for req in re.finditer(pattern, document, re.MULTILINE):
